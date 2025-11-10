@@ -48,52 +48,50 @@ def go(args):
 # TODO: In the code below, fill in the data type for each argumemt. The data type should be str, float or int. 
 # TODO: In the code below, fill in a description for each argument. The description should be a string.
 if __name__ == "__main__":
+        parser = argparse.ArgumentParser(description="A very basic data cleaning")
 
-    parser = argparse.ArgumentParser(description="A very basic data cleaning")
-  
-    parser.add_argument(
-        "--input_artifact", 
-        type = ## INSERT TYPE HERE: str, float or int,
-        help = ## INSERT DESCRIPTION HERE,
-        required = True
-    )
+        parser.add_argument(
+            "--input_artifact",
+            type=str,  # <-- FILL IN
+            help="The name of the input artifact. It will be a table from W&B",  # <-- FILL IN
+            required=True
+        )
 
-    parser.add_argument(
-        "--output_artifact", 
-        type = ## INSERT TYPE HERE: str, float or int,
-        help = ## INSERT DESCRIPTION HERE,
-        required = True
-    )
+        parser.add_argument(
+            "--output_artifact",
+            type=str,  # <-- FILL IN
+            help="The name for the output artifact",  # <-- FILL IN
+            required=True
+        )
 
-    parser.add_argument(
-        "--output_type", 
-        type = ## INSERT TYPE HERE: str, float or int,
-        help = ## INSERT DESCRIPTION HERE,
-        required = True
-    )
+        parser.add_argument(
+            "--output_type",
+            type=str,  # <-- FILL IN
+            help="The type for the output artifact",  # <-- FILL IN
+            required=True
+        )
 
-    parser.add_argument(
-        "--output_description", 
-        type = ## INSERT TYPE HERE: str, float or int,
-        help = ## INSERT DESCRIPTION HERE,
-        required = True
-    )
+        parser.add_argument(
+            "--output_description",
+            type=str,  # <-- FILL IN
+            help="A description for the output artifact",  # <-- FILL IN
+            required=True
+        )
 
-    parser.add_argument(
-        "--min_price", 
-        type = ## INSERT TYPE HERE: str, float or int,
-        help = ## INSERT DESCRIPTION HERE,
-        required = True
-    )
+        parser.add_argument(
+            "--min_price",
+            type=float,  # <-- FILL IN
+            help="The minimum price to keep in the dataset",  # <-- FILL IN
+            required=True
+        )
 
-    parser.add_argument(
-        "--max_price",
-        type = ## INSERT TYPE HERE: str, float or int,
-        help = ## INSERT DESCRIPTION HERE,
-        required = True
-    )
+        parser.add_argument(
+            "--max_price",
+            type=float,  # <-- FILL IN
+            help="The maximum price to keep in the dataset",  # <-- FILL IN
+            required=True
+        )
 
+        args = parser.parse_args()
 
-    args = parser.parse_args()
-
-    go(args)
+        go(args)
